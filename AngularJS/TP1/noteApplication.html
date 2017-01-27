@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TP1">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="noteController.js"></script>
+</head>
+<body data-ng-controller="noteController as noteCtrl">
+<p>Note:</p>
+<textarea id="champsNote" name="note" value="note"></textarea></body><br>
+<input type="submit" id="button1" name="enregistrer" value="Enregistrer">
+<input type="submit" id="button2" name="effacer" value="Effacer">
+<div>
+    Nombre de caractères restants:
+</div>
+<div>
+    Note sauvegardée
+</div>
+</body>
+</html>
