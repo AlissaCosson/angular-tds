@@ -1,0 +1,35 @@
+body{
+    heigth:100%;
+    font-family: Arial;
+    color: blue;
+}
+
+textarea{
+    color: blue;
+    width: 30%;
+}
+
+fieldset{
+    border-radius: 8px;
+    color: blue;
+    width: 30%;
+    border-color: blue;
+    background-color: lightblue;
+}
+
+.noteSaisie{
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border-radius:5px;
+}
+
+input{
+    background-color: blue;
+    color: white;
+    border-radius:5px;
+}
