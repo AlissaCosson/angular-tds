@@ -6,24 +6,28 @@
     <link rel="stylesheet" href="noteApplication.css" media="all">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+
     <script src="noteController.js"></script>
     <link rel="stylesheet" href="noteApplication.css" media="all">
 
 </head>
 <body data-ng-controller="noteController as noteCtrl">
 <p>Note:</p>
-<textarea rows="10" ng-model="txt" maxlength="100" id="champsNote" name="note" value="note"></textarea></body><br>
-<input class="btnEnregistrer" type="submit" id="button1" name="enregistrer" value="Enregistrer">
-<button class="btnEffacer" ng-click="reset()" id="button2">Effacer</button>
+<textarea rows="10" data-ng-model="noteCtrl.value" maxlength="100" id="champsNote" name="note" value="note"></textarea></body><br>
+<input class="btnEnregistrer" data-ng-click="noteCtrl.save()" type="submit" id="button1" name="enregistrer" value="Enregistrer">
+<input class="btnEffacer" data-ng-click="noteCtrl.clear()" type="submit" id="button2" name="effacer" value="Effacer">
 <fieldset class="noteSaisie">
     <div>
-    Vous avez saisi: {{txt}}
+    Vous avez saisi: {{noteCtrl.value}}
     </div>
 </fieldset>
 <fieldset class="caracteresRestants">
     <div>
-    Nombre de caractères restants: {{100-txt.length}}
+    {{noteCtrl.count()}}
+    </div>
+    <div>
+        {{noteCtrl.show()}}
     </div>
 </fieldset>
 </body>
