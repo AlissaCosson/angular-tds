@@ -14,21 +14,28 @@
 </head>
 <body data-ng-controller="noteController as noteCtrl">
 <p>Note:</p>
+
 <textarea rows="10" data-ng-model="noteCtrl.value" maxlength="100" id="champsNote" name="note" value="note"></textarea></body><br>
 <input class="btnEnregistrer" data-ng-click="noteCtrl.save()" type="submit" id="button1" name="enregistrer" value="Enregistrer">
 <input class="btnEffacer" data-ng-click="noteCtrl.clear()" type="submit" id="button2" name="effacer" value="Effacer">
+
 <fieldset class="noteSaisie">
     <div>
     Vous avez saisi: {{noteCtrl.value}}
     </div>
+
 </fieldset>
-<fieldset class="caracteresRestants">
+
+<fieldset>
     <div>
-    {{noteCtrl.count()}}
-    </div>
+            Nombre de caractères restants: {{noteCtrl.count()}}/100</div>
+</fieldset>
+<fieldset class="message" ng-style="noteCtrl.show() == 'Message sauvegardé' && {'background-color': 'YellowGreen'} || noteCtrl.show() == 'Message modifié' && noteCtrl.count()>20 && {'background-color': 'PaleGoldenRod'} || noteCtrl.show() == 'Message modifié' && noteCtrl.count()<21 && {'background-color': 'IndianRed'}">
     <div>
+
         {{noteCtrl.show()}}
     </div>
-</fieldset>
+    </fieldset>
+
 </body>
 </html>

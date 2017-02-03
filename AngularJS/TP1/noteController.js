@@ -9,7 +9,7 @@ app.controller('noteController', ["$cookies",function(cookies) {
 
 
     var info = "";
-    this.value = cookies.get('messageNote');
+    this.value = cookies.get('messageNote') || "";
     var self=this;
 
     this.count = function() {
