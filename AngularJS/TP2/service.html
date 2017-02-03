@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TP2">
+<head>
+    <meta charset="UTF-8">
+    <title>Service</title>
+    <link rel="stylesheet" href="service.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="serviceController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+
+
+</head>
+<body ng-controller="serviceController as serviceCtrl">
+<center>
+<fieldset>
+<label>Services</label>
+<fieldset>
+    Choisissez les éléments à inclure
+</fieldset>
+<div>
+    <p ng-repeat="service in serviceCtrl.services">
+    <button>
+
+        {{service.name}} {{service.price}}
+    </button></p>
+</div>
+<hr>
+Total:
+</fieldset>
+</center>
+</body>
+</html>

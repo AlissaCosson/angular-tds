@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+
+}
+
+fieldset{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 40%;
+    align:center;
+}
+
+button{
+    width: 40%;
+    height: 40px;
+
+}
