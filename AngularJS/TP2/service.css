@@ -1,6 +1,6 @@
 body{
     text-align: center;
-
+    font-family: 'Comic Sans MS', cursive;
 }
 
 fieldset{
@@ -13,5 +13,24 @@ fieldset{
 button{
     width: 40%;
     height: 40px;
+    font-family: 'Comic Sans MS', cursive;
+    border-radius:8px;
+    background-color: lightblue;
 
+}
+
+.cadreService{
+    background-color: lightseagreen;
+}
+
+.title{
+    font-size: 200%;
+}
+
+.choixElements{
+    background-color: lightblue;
+}
+
+.active{
+    background-color: khaki;
 }

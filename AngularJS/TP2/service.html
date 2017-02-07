@@ -13,20 +13,21 @@
 </head>
 <body ng-controller="serviceController as serviceCtrl">
 <center>
-<fieldset>
-<label>Services</label>
-<fieldset>
+<fieldset class="cadreService">
+<label class="title">Services</label>
+<fieldset class="choixElements">
     Choisissez les éléments à inclure
+    {{serviceCtrl.count()}} service(s) sélectionné(s)
 </fieldset>
 <div>
     <p ng-repeat="service in serviceCtrl.services">
-    <button>
+    <button ng-click="serviceCtrl.activer(service)" ng-class="{'active' : service.active}">
 
-        {{service.name}} {{service.price}}
+        {{service.name}} {{service.price | currency: $ : 2}}
     </button></p>
 </div>
 <hr>
-Total:
+Total: {{serviceCtrl.total()}}
 </fieldset>
 </center>
 </body>

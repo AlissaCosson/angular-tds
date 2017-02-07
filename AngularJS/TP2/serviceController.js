@@ -24,5 +24,29 @@ app.controller("serviceController", [ function(){
         "active":false
     }]
 
+    this.price=300;
+    this.activer=function(service){
+        service.active=!service.active;
+        if(service.active==true){
+            this.value=this.value+1;
+            this.price=this.price+service.price;
+        }
+        else{
+            this.value=this.value-1;
+            this.price=this.price-service.price;
+        }
+    }
+
+    this.value=1;
+    this.count=function(service){
+        return this.value;
+    }
+
+    this.total=function(price){
+        return this.price;
+    }
+
+
+
 
 }]);
