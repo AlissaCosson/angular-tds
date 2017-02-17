@@ -22,10 +22,37 @@ app.controller("contactController", [ function(){
             "mail": "Steeve@apple.com"
         }];
 
-    this.value=3;
-    this.count=function(contact){
-        return this.value;
+    this.visibleAjout=false;
+    this.setVisibleAjout=function(){
+        this.visibleAjout=true;
+        this.visibleModif=false;
+    };
+
+    this.visibleModif=false;
+    this.setVisibleModif=function(){
+        this.visibleModif=true;
+        this.visibleAjout=false;
+    };
+
+
+    this.estVisibleAjout=function(){
+        return this.visibleAjout;
+    };
+
+    this.estVisibleModif=function(){
+        return this.visibleModif;
+    };
+
+    this.annulerAjout=function(){
+        this.visibleAjout=false;
+        return this.visibleAjout;
+    };
+
+    this.annulerModif=function(){
+        this.visibleModif=false;
+        return this.visibleModif;
     }
+
 
 
 }]);

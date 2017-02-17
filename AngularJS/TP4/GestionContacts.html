@@ -11,19 +11,40 @@
 </head>
 
 <body ng-controller="contactController as contactCtrl">
+<fieldset>
+    GESTION DES CONTACTS
     <div>
-    <input type="text" id="filtre" name="filtre" placeholder="Filtrer...">
+    <input class="filtre" ng-model="myfiltre" type="text" id="filtre" name="filtre" placeholder="Filtrer...">
     <table>
-        <tr ng-repeat="contact in contactCtrl.contacts">
+        <tr ng-repeat="contact in contactCtrl.contacts | filter:myfiltre as data">
             <td>{{contact.nom}}</td>
             <td>{{contact.prenom}}</td>
-            <td>{{contact.mail}} <button class="buttonModifier" id="modifier" name="modifier" ><img src="buttonModifier.png"></button><button class="buttonSupprimer" id="supprimer" name="supprimer"><img src="buttonSupprimer.png"></button></td>
+            <td>{{contact.mail}} <button ng-click="contactCtrl.setVisibleModif()" class="buttonModifier" id="modifier" name="modifier" ><img src="buttonModifier.png"></button><button class="buttonSupprimer" id="supprimer" name="supprimer"><img src="buttonSupprimer.png"></button></td>
         </tr>
     </table>
-        <input type="submit" id="ajouter" name="ajouter" value="Ajouter...">
+        <input class="ajouter" ng-click="contactCtrl.setVisibleAjout()" type="submit" id="ajouter" name="ajouter" value="Ajouter...">
         <div>
-            {{contactCtrl.count()}} contacts trouvés
+            {{(data | filter:myfiltre).length}} contacts trouvés.
+        </div>
+
+        <div ng-show="contactCtrl.estVisibleAjout()">
+            Ajouter un contact <br>
+            <input type="text" id="nom" name="nom" placeholder="Entrez un nom...">
+            <input type="text" id="prenom" name="prenom" placeholder="Prénom...">
+            <input type="text" id="mail" name="mail" placeholder="Adresse Mail">
+            <input type="submit" id="valider" name="valider" value="Valider">
+            <input ng-click="contactCtrl.annulerAjout()" type="submit" id="annuler" name="annuler" value="Annuler">
+        </div>
+
+        <div ng-show="contactCtrl.estVisibleModif()">
+            Modifier un contact <br>
+            <input type="text" id="nomModif" name="nomModif" value="">
+            <input type="text" id="prenomModif" name="prenomModif" value="">
+            <input type="text" id="mailModif" name="mailModif" value="">
+            <input type="submit" id="valider2" name="valider" value="Valider">
+            <input ng-click="contactCtrl.annulerModif()" type="submit" id="annuler2" name="annuler" value="Annuler">
         </div>
     </div>
+</fieldset>
 </body>
 </html>
