@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TP4">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Contacts</title>
+    <link rel="stylesheet" href="GestionContacts.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="contactController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+</head>
+
+<body ng-controller="contactController as contactCtrl">
+    <div>
+    <input type="text" id="filtre" name="filtre" placeholder="Filtrer...">
+    <table>
+        <tr ng-repeat="contact in contactCtrl.contacts">
+            <td>{{contact.nom}}</td>
+            <td>{{contact.prenom}}</td>
+            <td>{{contact.mail}} <button class="buttonModifier" id="modifier" name="modifier" ><img src="buttonModifier.png"></button><button class="buttonSupprimer" id="supprimer" name="supprimer"><img src="buttonSupprimer.png"></button></td>
+        </tr>
+    </table>
+        <input type="submit" id="ajouter" name="ajouter" value="Ajouter...">
+        <div>
+            {{contactCtrl.count()}} contacts trouvés
+        </div>
+    </div>
+</body>
+</html>
