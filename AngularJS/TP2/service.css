@@ -6,7 +6,7 @@ body{
 fieldset{
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 40%;
+    width: 36%;
     align:center;
 }
 
@@ -33,4 +33,8 @@ button{
 
 .active{
     background-color: khaki;
+}
+
+.textCodePromo{
+    border-radius:8px;
 }

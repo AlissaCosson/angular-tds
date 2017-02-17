@@ -16,7 +16,7 @@
 <fieldset class="cadreService">
 <label class="title">Services</label>
 <fieldset class="choixElements">
-    Choisissez les éléments à inclure
+    Choisissez les éléments à inclure <br>
     {{serviceCtrl.count()}} service(s) sélectionné(s)
 </fieldset>
 <div>
@@ -27,7 +27,17 @@
     </button></p>
 </div>
 <hr>
-Total: {{serviceCtrl.total()}}
+Total: {{serviceCtrl.total()}} <br>
+    <div>
+        <br>
+    <input type="checkbox" name="checkPromo" id="checkPromo" ng-click="serviceCtrl.setVisible()">
+    <input class="textCodePromo" type="text" id="codePromo" name="codePromo" placeholder="Code Promo" ng-class="{'code' : promo.code}" >
+    </div>
+    <div ng-show="serviceCtrl.estVisible()">
+        Remise: {{serviceCtrl.remisePromo()}}
+        <br>
+        Total avec remise: {{this.total-this.remise}}
+    </div>
 </fieldset>
 </center>
 </body>
