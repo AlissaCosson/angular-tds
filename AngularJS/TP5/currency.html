@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TP5">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency</title>
+    <link rel="stylesheet" href="currency.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="currencyController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+</head>
+<body ng-controller="currencyController as currencyCtrl">
+
+<fieldset>
+    <div>
+        <input type="text" name="valeur">
+        <select ng-option="">
+
+        </select>
+        <select>
+
+        </select>
+        <input type="submit" name="convertir" value="Convertir">
+        <input type="text" name="resultat" readonly="readonly">
+        <input type="checkbox" ng-click="currencyCtrl.setVisibleHistorique()" name="historique" value="Historique" checked> Historique
+    </div>
+
+    <div ng-show="currencyCtrl.showHistorique()">
+        <table>
+            <tr>
+                <td>De</td>
+                <td>En</td>
+                <td>Tx</td>
+                <td>Montant</td>
+                <td>Date</td>
+                <td>Delta</td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="currencyCtrl.showHistorique()">
+        <input type="checkbox" name="check">
+        <input type="text" name="text">
+    </div>
+
+</fieldset>
+
+</body>
+</html>
