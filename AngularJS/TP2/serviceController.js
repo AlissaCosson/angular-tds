@@ -5,8 +5,10 @@
 var app=angular.module("TP2");
 app.controller("serviceController", [ function(){
 
-    var code="";
     var self=this.value;
+    this.codePromo="";
+    this.remise="Code promo invalide";
+    this.plop = "plop";
 
     this.services= [
         {
@@ -41,6 +43,7 @@ app.controller("serviceController", [ function(){
         "remise" :0.02
     }];
 
+
     this.price=300;
     this.activer=function(service){
         service.active=!service.active;
@@ -72,25 +75,27 @@ app.controller("serviceController", [ function(){
         return this.visible;
     };
 
-    this.remise=0;
+    this.applyCode=function(service){
+        if(this.codePromo=="B22"){
+            this.remise=this.price*0.05;
+            return this.remise;
+        }
+        else if(this.codePromo=="UBOAT"){
+            this.remise=this.price*0.02;
+            return this.remise;
 
+        }
+        else if(this.codePromo=="AZ"){
+            this.remise=this.price*0.01;
+            return this.remise;
 
-    this.remisePromo=function(code){
-        if(this.code=="B22") {
-            this.remise = this.price * 0.05;
-        }
-        else if(this.code=="AZ") {
-            this.remise = this.price * 0.01;
-        }
-        else if(this.code=="UBOAT") {
-            this.remise = this.price * 0.02;
-        }
-        else {
-            this.remise = 0;
         }
 
-        return this.remise;
-    }
+        else{
+            return this.remise;
+        }
+    };
+
 
 
 }]);

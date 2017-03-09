@@ -31,12 +31,13 @@ Total: {{serviceCtrl.total()}} <br>
     <div>
         <br>
     <input type="checkbox" name="checkPromo" id="checkPromo" ng-click="serviceCtrl.setVisible()">
-    <input class="textCodePromo" type="text" id="codePromo" name="codePromo" placeholder="Code Promo" ng-class="{'code' : promo.code}" >
+    <input class="textCodePromo" type="text" id="codePromo" name="codePromo" placeholder="Code Promo" ng-class="{'code' : promo.code}" ng-model="serviceCtrl.codePromo">
+
     </div>
     <div ng-show="serviceCtrl.estVisible()">
-        Remise: {{serviceCtrl.remisePromo()}}
+        Remise: {{serviceCtrl.applyCode()}}
         <br>
-        Total avec remise: {{this.total-this.remise}}
+        Total avec remise: {{serviceCtrl.total() - serviceCtrl.applyCode()}}
     </div>
 </fieldset>
 </center>
