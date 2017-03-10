@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="TP7">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="calculatrice.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="calculatriceController.js"></script>
+</head>
+<body ng-controller="calculatriceController as calculatriceCtrl">
+
+Calculatrice
+    <fieldset>
+    <div>
+    <input type="text" id="textCalc" name="textCalc" readonly ng-model="calculatriceCtrl.out">
+
+    </div>
+        <label ng-repeat="op in calculatriceCtrl.ops">
+        <div>
+            <button id="touche" name="touche" ng-click="calculatriceCtrl.affiche(op)">{{op.value}}</button>
+
+        </div>
+        </label>
+    </fieldset>
+</body>
+</html>
