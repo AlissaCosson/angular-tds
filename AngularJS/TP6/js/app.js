@@ -1,0 +1,1 @@
+angular.module("TP6", ['ngRoute','App2']);
