@@ -13,14 +13,14 @@
 
 <fieldset>
     <div>
-        <input type="text" name="valeur">
+        <input type="text" name="valeur" ng-model="currencyCtrl.in">
         <select ng-model="currencyCtrl.from" data-ng-options='(v.code + " - " + v.name) for (k, v) in currencyCtrl.currencies'>
         </select>
         <a href="#" data-ng-click="currencyCtrl.swap()"> -- </a>
         <select ng-model="currencyCtrl.to" data-ng-options='(v.code + " - " + v.name) for (k, v) in currencyCtrl.currencies'>
         </select>
         <input ng-click="currencyCtrl.convertir()" type="submit" name="convertir" value="Convertir">
-        <input type="text" name="resultat" readonly="readonly">
+        <input type="text" name="resultat" readonly="readonly" value="{{currencyCtrl.out}}">
         <input type="checkbox" ng-click="currencyCtrl.setVisibleHistorique()" name="historique" value="Historique" checked> Historique
     </div>
 

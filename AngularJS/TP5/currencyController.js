@@ -6,6 +6,12 @@ var app=angular.module("TP5");
 app.controller("currencyController", ['$http',  function($http){
 
     var self=this;
+    var from="";
+    var to="";
+    var val;
+    this.in;
+    this.out;
+    this.result=0;
 
     this.currencies;
 
@@ -24,10 +30,10 @@ app.controller("currencyController", ['$http',  function($http){
 
     this.convertir=function() {
 
-        $http.jsonp('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q=' + from.code + '_' + to.code, {jsonpCallbackParam: 'callback'})
+        $http.jsonp('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q=' + self.from.code + '_' + self.to.code, {jsonpCallbackParam: 'callback'})
             .then(function (response) {
                 self.result = response.data[self.from.code + '_' + self.to.code].val;
-
+                self.out=self.in*self.result;
             })
     };
 
@@ -46,11 +52,7 @@ app.controller("currencyController", ['$http',  function($http){
             change=self.from;
             self.from= self.to;
             self.to=change;
-        }
-
-
-
-
+        };
 
 
 }]);
