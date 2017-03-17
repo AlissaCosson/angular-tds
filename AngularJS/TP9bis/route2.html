@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TP9bis">
+<head>
+    <meta charset="UTF-8">
+    <title>Route2</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="routing.js"></script>
+
+</head>
+<body ng-controller="RouteController as rtCtrl2">
+<h1>Route2</h1>
+<div>Bienvenue M. {{rtCtrl2.params.prenom}} {{rtCtrl2.params.nom}}</div>
+<div><label>Entrez votre code : <input type="text" ng-model="rtCtrl2.code.value"></label></div>
+</body>
+</html>
